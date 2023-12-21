@@ -21,6 +21,11 @@ import { useRouter } from 'next/router';
 import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { color } from '@mui/system';
 // import Image from 'next/image';
 
 var itemIcons = [
@@ -88,15 +93,20 @@ const Navbar = ({ window }: Props) => {
 						<Typography paddingTop={'7px'}  variant='h4' fontFamily={'fantasy'} component='div'>
 							Akhmad
 						</Typography>
+						<Box sx={{ display: 'flex', gap: '15px', ml: 54 }}>
+							<a style={{color: "#fff",}} href="https://telegram.org/AkhmadKholmurodov"><TelegramIcon href="" sx={{transition: "0.3s ease-in-out", mx:"4px", fontSize: "1.8rem", cursor: 'pointer', '&:hover': {color: '#EEDC82',fontSize: "2rem"} }} /></a>
+							<a style={{color: "#fff"}} href="https://instagram.com/joseehyuk"><InstagramIcon sx={{ cursor: 'pointer', fontSize: "1.8rem", mx:"4px", '&:hover': {transition: "0.3s ease-in-out",color: '#EEDC82',fontSize: "2rem"}}} /></a>
+							<a style={{color: "#fff"}} href="https://youtube.com"><YouTubeIcon sx={{ cursor: 'pointer', fontSize: "1.8rem", mx:"4px", '&:hover': {transition: "0.3s ease-in-out", color: '#EEDC82',fontSize: "2rem"} }} /></a>
+							<a style={{color: "#fff"}} href="https://kr.linkedin.com/in/akhmad-kholmurodov-5a97a4216"><LinkedInIcon sx={{transition: "0.3s ease-in-out", fontSize: "1.8rem", mx:"4px", cursor: 'pointer', '&:hover': {color: '#EEDC82', fontSize: "2rem"}}}/></a>
+						</Box>
 					</Box>
 
 					<Box sx={{ display: { xs: 'none', sm: 'block' }, pr: "100px", }}>
 						{navItems.map(item => (
 							<Button 
 							onClick={() => router.push(item.route)} key={item.route} 
-							sx={{  color: '#fff', pr: "40px", fontSize: 17, fontFamily: "roboto", alignItems: "center", justifyContent: "center",'&:hover': {backgroundColor: 'rgba(86,64,31, .6)',
-							
-							}}}>
+							sx={{  color: '#fff', pr: "40px", fontSize: 17, fontFamily: "roboto", alignItems: "center", justifyContent: "center",'&:hover': {backgroundColor: 'rgba(86,64,31, .6)',}
+							}}>
 								{/* {itemIcons.map(itemIcon=>(itemIcons))} */}
 								{item.label}
 							</Button>

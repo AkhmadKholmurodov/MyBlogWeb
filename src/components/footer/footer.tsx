@@ -18,7 +18,7 @@ const Footer = () => {
 			}}
 			borderTop={'1px solid rgba(255, 255, 255, .5)'}
 		>
-			<Typography>© {format(new Date(), 'yyyy')} Akhmad. All Right Reserved.</Typography>
+			<Typography>© {format(new Date(), 'yyyy')} Akhmad. Created 2023 .</Typography>
 			<Box sx={{ display: 'flex', gap: '15px' }}>
 				<a style={{color: "#fff"}} href="https://telegram.org/AkhmadKholmurodov"><TelegramIcon href="" sx={{ cursor: 'pointer' }} /></a>
 				<a style={{color: "#fff"}} href="https://instagram.com/joseehyuk"><InstagramIcon sx={{ cursor: 'pointer' }} /></a>

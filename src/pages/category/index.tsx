@@ -6,41 +6,47 @@ import { CategoryType } from '../../interfaces/categories.interface';
 import Layout from '../../layout/layout';
 import SEO from '../../layout/seo/seo';
 import { BlogsService } from '../../services/blog.service';
+import CodeRain from "./CodeRain"
+
 
 const CategoryPage = ({ categories }: CategoryPageProps) => {
 	const rotuer = useRouter();
 
 	return (
 		<SEO metaTitle='All Categories'>
-			<Layout>
-				<Box
-					width={{ xs: '100%', md: '80%' }}
-					marginX={'auto'}
-					marginTop={'10vh'}
-					borderRadius={'8px'}
-					height={{ xs: '30vh', md: '50vh' }}
-					sx={{
-						backgroundColor: 'black',
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-						flexDirection: 'column',
-						rowGap: '10px',
-						bgcolor: "#222"
-					}}
-				>
-					<Typography variant='h3' fontFamily={'cursive'} mb={10}>
-						All Categories
-					</Typography>
-					<ButtonGroup variant='contained' aria-label='primary button'>
-						{categories.map(item => (
-							<Button sx={{ color: "#fff", background:"none",p:2, fontSize:"large",  px: 10, borderRadius: "12px",'&:hover': {bgcolor: 'rgba(86,64,31, .6)'}, fontFamily:"roboto", bgcolor:"#333" }} onClick={() => rotuer.push(`/category/${item.slug}`)} key={item.slug}>
-								{item.label}
-							</Button>
-						))}
-					</ButtonGroup>
-				</Box>
-			</Layout>
+			<CodeRain/>
+				<Layout>
+					<Box
+						width={{ xs: '100%', md: '80%' }}
+						marginX={'auto'}
+						marginTop={'10vh'}
+						borderRadius={'8px'}
+						height={{ xs: '30vh', md: '50vh' }}
+						sx={{
+							backgroundColor: 'black',
+							display: 'flex',
+							justifyContent: 'center',
+							alignItems: 'center',
+							flexDirection: 'column',
+							rowGap: '10px',
+							bgcolor: "#222"
+						}}
+					>
+						<Typography variant='h3' fontFamily={'cursive'} mb={10}>
+							All Categories
+						</Typography>
+						<ButtonGroup variant='contained' aria-label='primary button'>
+							{categories.map(item => (
+								<Button sx={{ color: "#fff", background:"none",p:2, fontSize:"large",  px: 10, borderRadius: "12px",'&:hover': {bgcolor: 'rgba(86,64,31, .6)'}, fontFamily:"roboto", bgcolor:"#333" }} onClick={() => rotuer.push(`/category/${item.slug}`)} key={item.slug}>
+									{item.label}
+								</Button>
+							))}
+						</ButtonGroup>
+					</Box>
+					
+
+				</Layout>
+			
 		</SEO>
 	);
 };
