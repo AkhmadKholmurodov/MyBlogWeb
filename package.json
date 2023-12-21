@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && gh-pages -d out -b gh-pages -t true",
+    "deploy": "next build && next export && gh-pages -d out -b gh-pages -t true",
     "postdeploy": "next build"
   },
   "homepage": "https://github.com/AkhmadKholmurodov/MyBlogWeb",
@@ -25,7 +25,7 @@
     "graphql": "^16.8.1",
     "graphql-request": "^5.2.0",
     "mui-styles": "^1.0.4",
-    "next": "14.0.4",
+    "next": "^14.0.4",
     "nprogress": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
