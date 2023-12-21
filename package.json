@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && next export && gh-pages -d -b gh-pages -t true",
+    "postdeploy": "next build"
   },
   "homepage": "https://github.com/AkhmadKholmurodov/MyBlogWeb",
   "dependencies": {
