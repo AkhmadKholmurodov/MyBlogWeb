@@ -32,7 +32,8 @@ const Content = ({ blogs }: ContentProps) => {
 						{item.title}
 					</Typography>
 					<Typography variant='body1' color={'gray'}>
-						{item.excerpt} {/* this is context excerpt what discription of project */}
+						{/* this is context excerpt what discription of project */}
+						{item.excerpt}
 					</Typography>
 					<Divider sx={{ marginTop: '30px' }} />
 					<Box sx={{ display: 'flex', gap: '10px', marginTop: '20px' }}>
