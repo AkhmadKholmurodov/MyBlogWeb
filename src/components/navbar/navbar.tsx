@@ -16,9 +16,18 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { navItems } from '../../config/constants';
 import CloseIcon from '@mui/icons-material/Close';
-import AdjustIcon from '@mui/icons-material/Adjust';
+// import AdjustIcon from '@mui/icons-material/Adjust';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
+import HomeIcon from '@mui/icons-material/Home';
+import CategoryIcon from '@mui/icons-material/Category';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+// import Image from 'next/image';
+
+var itemIcons = [
+	HomeIcon,
+	CategoryIcon,
+	AccountBalanceWalletIcon
+]
 
 interface Props {
 	window?: () => Window;
@@ -83,7 +92,12 @@ const Navbar = ({ window }: Props) => {
 
 					<Box sx={{ display: { xs: 'none', sm: 'block' }, pr: "100px", }}>
 						{navItems.map(item => (
-							<Button onClick={() => router.push(item.route)} key={item.route} sx={{  color: '#fff', pr: "40px", fontSize: 14, alignItems: "center", justifyContent: "center" }}>
+							<Button 
+							onClick={() => router.push(item.route)} key={item.route} 
+							sx={{  color: '#fff', pr: "40px", fontSize: 17, fontFamily: "roboto", alignItems: "center", justifyContent: "center",'&:hover': {backgroundColor: 'rgba(86,64,31, .6)',
+							
+							}}}>
+								{/* {itemIcons.map(itemIcon=>(itemIcons))} */}
 								{item.label}
 							</Button>
 						))}

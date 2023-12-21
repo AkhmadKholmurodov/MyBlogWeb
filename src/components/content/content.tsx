@@ -9,7 +9,7 @@ const Content = ({ blogs }: ContentProps) => {
 	const router = useRouter();
 
 	return (
-		<Box width={{ xs: '100%', md: '70%' }}>
+		<Box width={{ xs: '100%', md: '70%' }} >
 			{blogs.map(item => (
 				<Box
 					key={item.id}
@@ -20,17 +20,19 @@ const Content = ({ blogs }: ContentProps) => {
 						borderRadius: '8px',
 						boxShadow: '0px 8px 16px rgba(255, 255, 255, .1)',
 						cursor: 'pointer',
+						bgcolor:"#111",
+						border:"#333 solid 0.5"
 					}}
 					onClick={() => router.push(`/blog/${item.slug}`)}
 				>
 					<Box position={'relative'} width={'100%'} height={{ xs: '30vh', md: '50vh' }}>
 						<Image src={item.image.url} alt={item.title} fill style={{ objectFit: 'cover', borderRadius: '10px' }} />
 					</Box>
-					<Typography variant='h4' marginTop={'30px'}>
+					<Typography variant='h4' marginTop={'30px'} fontFamily={"fantacy"}> {/* this is context title */}
 						{item.title}
 					</Typography>
 					<Typography variant='body1' color={'gray'}>
-						{item.excerpt}
+						{item.excerpt} {/* this is context excerpt what discription of project */}
 					</Typography>
 					<Divider sx={{ marginTop: '30px' }} />
 					<Box sx={{ display: 'flex', gap: '10px', marginTop: '20px' }}>

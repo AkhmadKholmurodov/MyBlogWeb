@@ -5,17 +5,18 @@ import { format } from 'date-fns';
 import { SidebarProps } from './sidebar.props';
 import { useRouter } from 'next/router';
 
+
 const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
 	const router = useRouter();
 
 	return (
-		<Box width={{ xs: '100%', md: '30%' }}>
+		<Box width={{ xs: '100%', md: '30%' }} sx={{mt: "24px"}}>
 			<Box position={'sticky'} top={'100px'} sx={{ transition: 'all .3s ease' }}>
-				<Box padding={'20px'} border={'0.5px solid #333'} borderRadius={'12px'}>
-					<Typography variant='h5' sx={{color:"#D3D3D3"}}>Latest blog</Typography>
-					<Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+				<Box padding={'20px'} border={'0.5px solid #333'} borderRadius={'12px'} bgcolor={"#111"} >
+					<Typography variant='h5' sx={{color:"#D3D3D3", position:"initial", px:18, fontFamily:"fantacy"}}>Latest blog</Typography>
+					<Box  sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px' , bgcolor: "#222", borderRadius:"12px" }}>
 						{latestBlogs.map(item => (
-							<Box sx={{ cursor: 'pointer' }} onClick={() => router.push(`/blog/${item.slug}`)} key={item.id} marginTop={'20px'}>
+							<Box sx={{ cursor: 'pointer', '&:hover': {backgroundColor: 'rgba(86,64,31, .6)'}, pt: 0, borderRadius: "12px", m:2}} onClick={() => router.push(`/blog/${item.slug}`)} key={item.id} marginTop={'20px'}>
 								<Box sx={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
 									<Image
 										src={item.image.url}
@@ -24,8 +25,8 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
 										height={100}
 										style={{ objectFit: 'cover', borderRadius: '12px' }}
 									/>
-									<Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-										<Typography variant='body1'>{item.title}</Typography>
+									<Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px', }}>
+										<Typography variant='body1' >{item.title}</Typography>
 										<Box sx={{ display: 'flex', gap: '10px' }}>
 											<Avatar alt={item.author.name} src={item.author.avatar.url} />
 											<Box>
@@ -35,21 +36,22 @@ const Sidebar = ({ latestBlogs, categories }: SidebarProps) => {
 										</Box>
 									</Box>
 								</Box>
-								<Divider sx={{ marginTop: '20px' }} />
+								<Divider sx={{ marginTop: '0px' }} />
 							</Box>
 						))}
 					</Box>
 				</Box>
 				<Box padding={'20px'} marginTop={'20px'} border={'0.5px solid #333'} borderRadius={'12px'}>
-					<Typography variant='h5' sx={{color: "#D3D3D3"}}>Category</Typography>
-					<Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+					<Typography variant='h5' sx={{color: "#D3D3D3", fontFamily:"fantacy", px:20, pb:2}}>Category</Typography>
+					<Box sx={{ display: 'flex', flexDirection: 'column', marginTop: '20px', bgcolor:"#222", borderRadius:"12px", p:"16px" }}>
 						{categories.map(nav => (
 							<Fragment key={nav.slug}>
 								<Button
 									onClick={() => router.push(`/category/${nav.slug}`)}
 									fullWidth
-									sx={{ justifyContent: 'flex-start', height: '50px' }}
+									sx={{ justifyContent: 'flex-start', height: '50px', color: "#999", p:2, '&:hover': {backgroundColor: 'rgba(86,64,31,.6)'}, borderRadius:"8px"}}
 								>
+									{/* {latestBlogs.map(item => (<Avatar src={item.author.avatar.url} />))} */}
 									{nav.label}
 								</Button>
 								<Divider />

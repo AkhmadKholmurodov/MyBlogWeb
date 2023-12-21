@@ -26,15 +26,16 @@ const CategoryPage = ({ categories }: CategoryPageProps) => {
 						alignItems: 'center',
 						flexDirection: 'column',
 						rowGap: '10px',
+						bgcolor: "#222"
 					}}
 				>
-					<Typography variant='h3' fontFamily={'cursive'}>
+					<Typography variant='h3' fontFamily={'cursive'} mb={10}>
 						All Categories
 					</Typography>
-					<ButtonGroup variant='contained' aria-label='outlined primary button group'>
+					<ButtonGroup variant='contained' aria-label='primary button'>
 						{categories.map(item => (
-							<Button onClick={() => rotuer.push(`/category/${item.slug}`)} key={item.slug}>
-								# {item.label}
+							<Button sx={{ color: "#fff", background:"none",p:2, fontSize:"large",  px: 10, borderRadius: "12px",'&:hover': {bgcolor: 'rgba(86,64,31, .6)'}, fontFamily:"roboto", bgcolor:"#333" }} onClick={() => rotuer.push(`/category/${item.slug}`)} key={item.slug}>
+								{item.label}
 							</Button>
 						))}
 					</ButtonGroup>

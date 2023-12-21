@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import Image from 'next/image';
 import { format } from 'date-fns';
 import { HeroProps } from './hero.props';
-import { calculateEstimatedTimeToRead } from '../../helpers/time.format';
+import { calculateEstimatedTimeToRead } from '../..//helpers/time.format';
 import { useRouter } from 'next/router';
 
 const Hero = ({ blogs }: HeroProps) => {
@@ -22,7 +22,7 @@ const Hero = ({ blogs }: HeroProps) => {
 			>
 				{blogs.map(item => (
 					<Box key={item.id} sx={{ cursor: 'pointer' }} onClick={() => router.push(`/blog/${item.slug}`)}>
-						<Box sx={{ position: 'relative', width: '100%', height: '70vh' }}>
+						<Box sx={{ position: 'relative', width: '100%', height: '72vh' }}>
 							<Image src={item.image.url} alt={item.title} fill style={{ objectFit: 'cover' }} />
 							<Box
 								sx={{
@@ -33,10 +33,10 @@ const Hero = ({ blogs }: HeroProps) => {
 									bottom: 0,
 									width: '100%',
 									height: '100%',
-									backgroundColor: 'rgba(0, 0, 0, .6)',
+									backgroundColor: 'rgba(0, 0, 0, .2)',
 								}}
 							/>
-							<Box
+							{/* <Box
 								width={{ xs: '100%', md: '70%' }}
 								position={'relative'}
 								color={'white'}
@@ -57,7 +57,7 @@ const Hero = ({ blogs }: HeroProps) => {
 										</Box>
 									</Box>
 								</Box>
-							</Box>
+							</Box> */}
 						</Box>
 					</Box>
 				))}
