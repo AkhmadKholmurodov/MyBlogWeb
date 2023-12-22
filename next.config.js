@@ -6,7 +6,7 @@ const nextConfig = {
             domains: ['media.graphassets.com'],
             // unoptimized: true, //add
     },
-    // output: 'export',  // add
+    // output: 'export',  // addd
 };
 
 module.exports = nextConfig;
