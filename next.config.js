@@ -3,10 +3,22 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-            domains: ['media.graphassets.com'],
-            // unoptimized: true, //add
+      domains: ['media.graphassets.com'],
     },
-    // output: 'export',  // add
-};
-
-module.exports = nextConfig;
+    exportPathMap: async function () {
+      // Define exportPathMap if needed
+      return {
+        '/': { page: '/' },
+        // Add other pages as needed
+      };
+    },
+    // Other configurations...
+    output: {
+      // This is the configuration for the 'next export' command
+      path: 'out', // Specify the output directory
+      // Other export-related configurations...
+    },
+  };
+  
+  module.exports = nextConfig;
+  
