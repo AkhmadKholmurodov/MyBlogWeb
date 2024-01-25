@@ -14,10 +14,10 @@ const CategoryPage = ({ categories }: CategoryPageProps) => {
 
 	return (
 		<SEO metaTitle='All Categories'>
-			<CodeRain/>
+			{/* <CodeRain /> */}
 				<Layout>
 					<Box
-						width={{ xs: '100%', md: '80%' }}
+						width={ '80%' }
 						marginX={'auto'}
 						marginTop={'10vh'}
 						borderRadius={'8px'}
@@ -37,7 +37,7 @@ const CategoryPage = ({ categories }: CategoryPageProps) => {
 						</Typography>
 						<ButtonGroup variant='contained' aria-label='primary button'>
 							{categories.map(item => (
-								<Button sx={{ color: "#fff", background:"none",p:2, fontSize:"large",  px: 10, borderRadius: "12px",'&:hover': {bgcolor: 'rgba(86,64,31, .6)'}, fontFamily:"roboto", bgcolor:"#333" }} onClick={() => rotuer.push(`/category/${item.slug}`)} key={item.slug}>
+								<Button sx={{ color: "#fff", background:"none",p:2, fontSize:"middle",  px: 6, width:"70%", borderRadius: "12px",'&:hover': {bgcolor: 'rgba(86,64,31, .6)'}, fontFamily:"roboto", bgcolor:"#333" }} onClick={() => rotuer.push(`/category/${item.slug}`)} key={item.slug}>
 									{item.label}
 								</Button>
 							))}

@@ -49,7 +49,7 @@ const Navbar = ({ window }: Props) => {
 	const container = window !== undefined ? () => window().document.body : undefined;
 
 	const drawer = (
-		<Box sx={{ textAlign: 'center', color:'#333' }}>
+		<Box sx={{ textAlign: 'center', color:'#fff' }}>
 			<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', pr: '20px' }}>
 				<Box sx={{ my: 2, display: 'flex', alignItems: 'center', gap: '5px' }}>
 					{/* <Image src={'/favicon.svg'} alt={'logo'} width={50} height={50} /> */}
