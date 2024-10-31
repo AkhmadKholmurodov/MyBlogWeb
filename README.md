@@ -1,8 +1,10 @@
 <h1 align="center">MyBlog Website </h1>
 
 
-NextJs 14 version 
-TypeScript
-NodeJs
-MUI TailwindCss 디자인 작성
-GraphQl로 API 데이터 작성 
+<div align="center">
+  NextJs 14 version </br>
+  TypeScript </br>
+  NodeJs </br>
+  MUI TailwindCss 디자인 작성 </br>
+  GraphQl로 API 데이터 작성 </br>
+</div>
