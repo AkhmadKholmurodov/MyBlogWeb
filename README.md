@@ -1,4 +1,4 @@
-/// MyBlog Website ///
+<h1 align="center">MyBlog Website </h1>
 
 
 NextJs 14 version 
